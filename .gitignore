@@ -1,0 +1,5 @@
+.pypirc
+MANIFEST.in
+/vtstudio.egg-info
+/dist
+/build
