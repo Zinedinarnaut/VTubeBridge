@@ -15,12 +15,12 @@ class UDPDiscoveryProtocol(asyncio.DatagramProtocol):
             pass
 
 class VTubeStudioClient:
-    def __init__(self, uri="ws://0.0.0.0:8001"):
+    def __init__(self, uri="ws://0.0.0.0:8001", plugin_name="VTubeBridge", plugin_developer="Araxyso Aka (Zinny)"):
         self.uri = uri
         self.token = None
         self.websocket = None
-        self.plugin_name = "VTubeBridge"
-        self.plugin_developer = "Araxyso Aka (Zinny)"
+        self.plugin_name = plugin_name
+        self.plugin_developer = plugin_developer
         # For handling responses:
         self.pending_requests = {}  # Maps requestID to asyncio.Future
         self.event_queue = asyncio.Queue()  # For unsolicited events
@@ -206,11 +206,7 @@ class VTubeStudioClient:
             "apiVersion": "1.0",
             "requestID": str(uuid.uuid4()),
             "messageType": "ExpressionActivationRequest",
-            "data": {
-                "expressionFile": expression_file,
-                "fadeTime": fade_time,
-                "active": active
-            }
+            "data": {"expressionFile": expression_file, "fadeTime": fade_time, "active": active}
         }
         return await self.send_request(request)
 
@@ -220,14 +216,7 @@ class VTubeStudioClient:
             "apiVersion": "1.0",
             "messageType": "MoveModelRequest",
             "requestID": str(uuid.uuid4()),
-            "data": {
-                "positionX": position_x,
-                "positionY": position_y,
-                "rotation": rotation,
-                "scaleX": scale_x,
-                "scaleY": scale_y,
-                "timeInSeconds": 0.5
-            }
+            "data": {"positionX": position_x, "positionY": position_y, "rotation": rotation, "scaleX": scale_x, "scaleY": scale_y, "timeInSeconds": 0.5}
         }
         return await self.send_request(request)
 
