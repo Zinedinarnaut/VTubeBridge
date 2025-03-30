@@ -1,9 +1,0 @@
-setup.py
-vtstudio/__init__.py
-vtstudio/__main__.py
-vtstudio/client.py
-vtstudio.egg-info/PKG-INFO
-vtstudio.egg-info/SOURCES.txt
-vtstudio.egg-info/dependency_links.txt
-vtstudio.egg-info/requires.txt
-vtstudio.egg-info/top_level.txt
