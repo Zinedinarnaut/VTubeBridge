@@ -4,3 +4,4 @@ MANIFEST.in
 /dist
 /build
 /.idea
+setup.py
