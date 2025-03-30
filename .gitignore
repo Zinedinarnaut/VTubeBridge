@@ -3,3 +3,4 @@ MANIFEST.in
 /vtstudio.egg-info
 /dist
 /build
+/.idea
